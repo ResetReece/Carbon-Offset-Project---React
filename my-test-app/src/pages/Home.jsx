@@ -1,9 +1,11 @@
-import '../App.css'
+import '../App.css';
+import Nav from '../Components/nav';
+import Footer from '../Components/footer';
 
 export default function Home() {
   return (
     <>
-      <nav></nav>
+      <Nav />
 
       <div className="title-box">
         <h1 className="company-name">Rooted Offsets</h1>
@@ -42,7 +44,7 @@ export default function Home() {
         <p>Every program of Rooted Offsets is validated by either Gold Standard, Earth Sustainability Group, Verified Carbon Standard, Climate Action Reserve, or American Carbon Registry.</p>
       </div>
 
-      <footer></footer>
+      <Footer />
     </>
   )
 }

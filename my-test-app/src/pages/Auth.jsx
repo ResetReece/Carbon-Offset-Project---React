@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import '../App.css'
+import Nav from '../Components/nav';
+import Footer from '../Components/footer';
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true)
@@ -23,6 +25,34 @@ export default function Auth() {
   const googleButtonSignupRef = useRef(null)
 
   useEffect(() => {
+    const handleGoogleSignIn = (response) => {
+      console.log('Google Sign-In:', response)
+      setSuccessMessage('Successfully signed in with Google!')
+      setErrors({})
+    }
+
+    const initializeGoogleSignIn = () => {
+      if (googleButtonRef.current && window.google) {
+        window.google.accounts.id.initialize({
+          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '',
+          callback: handleGoogleSignIn
+        })
+        window.google.accounts.id.renderButton(googleButtonRef.current, {
+          theme: 'outline',
+          size: 'large',
+          width: '100%'
+        })
+      }
+
+      if (googleButtonSignupRef.current && window.google) {
+        window.google.accounts.id.renderButton(googleButtonSignupRef.current, {
+          theme: 'outline',
+          size: 'large',
+          width: '100%'
+        })
+      }
+    }
+
     // Load Google Sign-In script
     if (window.google) {
       initializeGoogleSignIn()
@@ -35,34 +65,6 @@ export default function Auth() {
       document.head.appendChild(script)
     }
   }, [])
-
-  const initializeGoogleSignIn = () => {
-    if (googleButtonRef.current && window.google) {
-      window.google.accounts.id.initialize({
-        client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID || '',
-        callback: handleGoogleSignIn
-      })
-      window.google.accounts.id.renderButton(googleButtonRef.current, {
-        theme: 'outline',
-        size: 'large',
-        width: '100%'
-      })
-    }
-
-    if (googleButtonSignupRef.current && window.google) {
-      window.google.accounts.id.renderButton(googleButtonSignupRef.current, {
-        theme: 'outline',
-        size: 'large',
-        width: '100%'
-      })
-    }
-  }
-
-  const handleGoogleSignIn = (response) => {
-    console.log('Google Sign-In:', response)
-    setSuccessMessage('Successfully signed in with Google!')
-    setErrors({})
-  }
 
   const handleMetaSignIn = async () => {
     try {
@@ -216,7 +218,7 @@ export default function Auth() {
 
   return (
     <>
-      <nav></nav>
+      <Nav />
 
       <div className="auth-container">
         <h2 id="formHeader">{isLogin ? 'Login' : 'Sign Up'}</h2>
@@ -393,7 +395,7 @@ export default function Auth() {
         )}
       </div>
 
-      <footer></footer>
+      <Footer />
     </>
   )
 }
