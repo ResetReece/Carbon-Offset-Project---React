@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import {useEffect } from "react";
 import "../App.css";
 import Nav from "../Components/nav";
 import Footer from "../Components/footer";
+import //Find replacement API cause idk where it's gone :)
 
 export default function Company() {
 
