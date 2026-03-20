@@ -4,11 +4,6 @@ import Nav from '../Components/nav';
 import Footer from '../Components/footer';
 
 export default function Account() {
-  const [activeTab, setActiveTab] = useState('personal')
-  const [isEditMode, setIsEditMode] = useState(false)
-  const [userName, setUserName] = useState('John Doe')
-  const [userEmail, setUserEmail] = useState('john@example.com')
-  const [userCreated] = useState('January 15, 2024')
   const [errorMessage] = useState('')
   const [showCropModal, setShowCropModal] = useState(false)
   const [profileImage, setProfileImage] = useState('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23e0e0e0%27 width=%27100%27 height=%27100%27/%3E%3Ccircle cx=%2750%27 cy=%2735%27 r=%2720%27 fill=%27%23999%27/%3E%3Cpath d=%27M 25 70 Q 25 55 50 55 Q 75 55 75 70 L 75 100 L 25 100 Z%27 fill=%27%23999%27/%3E%3C/svg%3E')
