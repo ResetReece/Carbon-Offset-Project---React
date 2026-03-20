@@ -48,12 +48,10 @@ export default function Reviews() {
   const filteredAndSortedReviews = useMemo(() => {
     let filtered = sampleReviews;
 
-    // Filter by stars
     if (starFilter !== 'all') {
       filtered = filtered.filter((review) => review.rating === parseInt(starFilter));
     }
 
-    // Sort reviews
     const sorted = [...filtered];
     if (sortOrder === 'newest') {
       sorted.sort((a, b) => b.date - a.date);

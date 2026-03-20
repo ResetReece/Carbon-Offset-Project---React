@@ -4,13 +4,6 @@ import Nav from '../Components/nav';
 import Footer from '../Components/footer';
 
 export default function Company() {
-  const [carbonData] = useState([
-    { rank: 1, country: 'China', emissions: 10065, total: '10,065,000,000', year: 2023 },
-    { rank: 2, country: 'United States', emissions: 5416, total: '5,416,000,000', year: 2023 },
-    { rank: 3, country: 'India', emissions: 2417, total: '2,417,000,000', year: 2023 },
-    { rank: 4, country: 'Russia', emissions: 1711, total: '1,711,000,000', year: 2023 },
-    { rank: 5, country: 'Japan', emissions: 1050, total: '1,050,000,000', year: 2023 }
-  ]);
 
   useEffect(() => {
   }, []);
