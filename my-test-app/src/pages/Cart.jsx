@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import { useState, useEffect } from "react";
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function Cart() {
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -36,7 +36,7 @@ export default function Cart() {
         </div>
       </div>
 
-      <div style={{ height: '90px' }}></div>
+      <div style={{ height: "90px" }}></div>
 
       <Footer />
 

@@ -1,47 +1,47 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function Checkout() {
   const navigate = useNavigate();
   const [billingData, setBillingData] = useState({
-    name: '',
-    email: '',
-    address: '',
-    city: '',
-    state: '',
-    zip: '',
-    country: ''
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    country: ""
   });
   const [total, setTotal] = useState(0);
-  const [paymentMessage, setPaymentMessage] = useState('');
+  const [paymentMessage, setPaymentMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setBillingData(prev => ({
       ...prev,
-      [id.replace('billing', '').toLowerCase()]: value
+      [id.replace("billing", "").toLowerCase()]: value
     }));
   };
 
   useEffect(() => {
     const initializeCheckout = async () => {
-      const authToken = localStorage.getItem('authToken');
+      const authToken = localStorage.getItem("authToken");
 
       if (!authToken) {
-        alert('You must be signed in to checkout');
-        navigate('/auth');
+        alert("You must be signed in to checkout");
+        navigate("/auth");
         return;
       }
 
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
       if (cart.length === 0) {
-        alert('Your cart is empty!');
-        navigate('/cart');
+        alert("Your cart is empty!");
+        navigate("/cart");
         return;
       }
 
@@ -49,36 +49,36 @@ export default function Checkout() {
       setTotal(cartTotal);
 
       try {
-        const apiUrl = window.location.hostname === 'localhost'
-          ? 'http://localhost:5000/create-payment-intent'
-          : window.location.origin + '/create-payment-intent';
+        const apiUrl = window.location.hostname === "localhost"
+          ? "http://localhost:5000/create-payment-intent"
+          : window.location.origin + "/create-payment-intent";
 
-        console.log('Fetching payment intent from:', apiUrl);
+        console.log("Fetching payment intent from:", apiUrl);
         const response = await fetch(apiUrl, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${authToken}`
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${authToken}`
           },
           body: JSON.stringify({
             amount: Math.round(cartTotal * 100),
-            currency: 'gbp'
+            currency: "gbp"
           })
         });
 
-        console.log('Payment intent response:', response.status);
+        console.log("Payment intent response:", response.status);
         if (!response.ok) {
           const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to create payment intent');
+          throw new Error(errorData.error || "Failed to create payment intent");
         }
 
         const data = await response.json();
-        console.log('Client secret received:', data.clientSecret ? 'yes' : 'no');
+        console.log("Client secret received:", data.clientSecret ? "yes" : "no");
         
         setIsLoading(false);
       } catch (error) {
-        console.error('Error creating payment intent:', error);
-        setPaymentMessage('Failed to initialize payment form: ' + error.message);
+        console.error("Error creating payment intent:", error);
+        setPaymentMessage("Failed to initialize payment form: " + error.message);
         setIsLoading(false);
       }
     };
@@ -98,7 +98,7 @@ export default function Checkout() {
         <div className="checkout-content">
           <div className="checkout-header">
             <h2>Checkout</h2>
-            <button className="back-link" onClick={() => navigate('/cart')}>
+            <button className="back-link" onClick={() => navigate("/cart")}>
               ← Back to Cart
             </button>
           </div>

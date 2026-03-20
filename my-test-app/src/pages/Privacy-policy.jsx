@@ -1,6 +1,6 @@
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function PrivacyPolicy() {
   return (
@@ -13,14 +13,14 @@ export default function PrivacyPolicy() {
 
       <div className="background-container">
         <h3>Last Updated: January 15, 2026</h3>
-        <p>This Privacy Policy describes Rooted Offsets LLC's website and services (collectively, the "Service"). Restitution Brands LLC dba Rooted Offsets ("Rooted Offsets," "we," "us," or "our") and its wholly owned subsidiaries comply with the Personal Information Protection and Electronic Documents Act ("PIPEDA") of Canada and the General Data Protection Regulation (GDPR) of the EU/UK for use and retention of personal information transferred from the Swiss and the European Union or Canada to the United States.</p>
+        <p>This Privacy Policy describes Rooted Offsets LLC"s website and services (collectively, the "Service"). Restitution Brands LLC dba Rooted Offsets ("Rooted Offsets," "we," "us," or "our") and its wholly owned subsidiaries comply with the Personal Information Protection and Electronic Documents Act ("PIPEDA") of Canada and the General Data Protection Regulation (GDPR) of the EU/UK for use and retention of personal information transferred from the Swiss and the European Union or Canada to the United States.</p>
         <p>If you have questions, concerns, or believe there is an enforcement breach regarding this Privacy Policy, you should contact our Data Protection Officer at stabrizi@rootedoffsets.com.</p>
 
         <h3>What Does This Notice Cover</h3>
         <p>This Website Privacy Notice applies only to your use of our website. Our site may contain links to other websites. Please note that we have no control over how your data is collected, stored, or used by other websites and we advise you to check the privacy policies of any such websites before providing any data to them.</p>
 
         <h3>What Is Personal Data?</h3>
-        <p>Personal data is defined by the General Data Protection Regulation (EU Regulation 2016/679) (the "GDPR") as 'any information relating to an identifiable person who can be directly or indirectly identified in particular by reference to an identifier'. Personal data is, in simpler terms, any information about you that enables you to be identified. Personal data covers obvious information such as your name and contact details, but it also covers less obvious information such as identification numbers, electronic location data, and other online identifiers. If you do not provide us with your personal data, we may not be able to provide you with our services or respond to any questions or requests you submit to us via our website. We will tell you when we ask for personal data which is a contractual requirement or is needed to perform our functions or to comply with our legal obligations.</p>
+        <p>Personal data is defined by the General Data Protection Regulation (EU Regulation 2016/679) (the "GDPR") as "any information relating to an identifiable person who can be directly or indirectly identified in particular by reference to an identifier". Personal data is, in simpler terms, any information about you that enables you to be identified. Personal data covers obvious information such as your name and contact details, but it also covers less obvious information such as identification numbers, electronic location data, and other online identifiers. If you do not provide us with your personal data, we may not be able to provide you with our services or respond to any questions or requests you submit to us via our website. We will tell you when we ask for personal data which is a contractual requirement or is needed to perform our functions or to comply with our legal obligations.</p>
 
         <h3>Legal Basis for Collecting and Processing Your Personal Information</h3>
         <p>Our legal basis for obtaining and utilizing your personal information, as this policy outlines, depends on the context in which it is collected. We may collect your personal data because of:</p>
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
         <p>We collect the following personally identifiable information about our users: name, e-mail address, corporate web address, telephone number, business address, preferred means of communication, and other voluntarily provided information. This personally identifiable information is typically provided when users register for online services, subscriptions, communications, surveys, or to request information. We also collect information about users regarding web pages accessed, traffic patterns and site usage. You can manage your permissions by clicking "Privacy" in the bottom corner of your screen.</p>
 
         <h3>With Whom We Share the Collected Personal Information</h3>
-        <p>To facilitate and make our website accessible to visitors, we engage third-party companies and individuals ('Data Processors') who may require access to your personal information. These tools may use cookies and other tracking technologies:</p>
+        <p>To facilitate and make our website accessible to visitors, we engage third-party companies and individuals ("Data Processors") who may require access to your personal information. These tools may use cookies and other tracking technologies:</p>
         <ul>
           <li>Metorik</li>
         </ul>
@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
 
         <h3>General Data Protection Regulation (GDPR)</h3>
         <p>As a leading climate action and carbon offset services provider, Rooted Offsets has made the security and protection of your data a top priority by using state-of-the-art physical, technological, and procedural security safeguards. The cornerstone to our platform is a rigorous security system that we—and by extension, you—can trust. We employ multiple safeguards and security protocols that are trusted in the industry with the singular goal of ensuring your data is protected.</p>
-        <p>We use multiple security measures, such as firewalls, encryption, IDS/IPS, physical/logical security, and regular security audits (to name a few), to safeguard the confidentiality of our users' personally identifiable information. Information we collect about our users is stored on secured servers.</p>
+        <p>We use multiple security measures, such as firewalls, encryption, IDS/IPS, physical/logical security, and regular security audits (to name a few), to safeguard the confidentiality of our users" personally identifiable information. Information we collect about our users is stored on secured servers.</p>
         <p>If you should have any questions about the security of the services or the Rooted Offsets environment, please inquire by sending an email to gdpr@rootedoffsets.com.</p>
 
         <h3>Resolution of Complaints</h3>
@@ -96,7 +96,7 @@ export default function PrivacyPolicy() {
         </ul>
 
         <h3>Correction/Updating Personally Identifiable Information</h3>
-        <p>You can ask to see the personal information that we hold about you. If you want to review, verify, or correct your personally identifiable information, or if you no longer desire Rooted Offsets's services, we will endeavor to provide a way to correct, update, or remove the data you provided to us. Please note that any such communication must be in writing by sending an e-mail to gdpr@rootedoffsets.com. In the event that we cannot provide you with access to your personal information, we will endeavor to inform you of the reasons why, subject to any legal or regulatory restrictions.</p>
+        <p>You can ask to see the personal information that we hold about you. If you want to review, verify, or correct your personally identifiable information, or if you no longer desire Rooted Offsets"s services, we will endeavor to provide a way to correct, update, or remove the data you provided to us. Please note that any such communication must be in writing by sending an e-mail to gdpr@rootedoffsets.com. In the event that we cannot provide you with access to your personal information, we will endeavor to inform you of the reasons why, subject to any legal or regulatory restrictions.</p>
 
         <h3>Our Response to Universal Opt-Out Mechanisms</h3>
         <p>Where the applicable regulations require us, we honour the opt-out signals you send to us by universal opt-out mechanisms. Universal opt-out mechanisms are tools designed to give you more control over your online privacy by simplifying the process of opting out of data collection and sharing practices. You can set your preferences through your browser, and once it sends your opt-out preferences to us, we will honour your request.</p>
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
         <p>Please note that we may ask you to verify your identity before responding to your request to protect the security of your personal information. You also have the right to file a complaint with a Data Protection Authority regarding our collection and use of your personal information. For more information on this, please contact your local data protection authority.</p>
 
         <h3>Personal Information Protection and Electronic Documents Act (PIPEDA)</h3>
-        <p>Rooted Offsets complies with Canada's Personal Information Protection and Electronic Documents Act ("PIPEDA"). PIPEDA sets out rules for the collection, use, and disclosure of personal information in the course of commercial activity as defined in the Act. Rooted Offsets fully complies with the 10 principles of PIPEDA, which are accountability, identifying purposes, consent, limiting collection, limiting use, disclosure and retention, accuracy, safeguards, openness, individual access, and providing recourse.</p>
+        <p>Rooted Offsets complies with Canada"s Personal Information Protection and Electronic Documents Act ("PIPEDA"). PIPEDA sets out rules for the collection, use, and disclosure of personal information in the course of commercial activity as defined in the Act. Rooted Offsets fully complies with the 10 principles of PIPEDA, which are accountability, identifying purposes, consent, limiting collection, limiting use, disclosure and retention, accuracy, safeguards, openness, individual access, and providing recourse.</p>
 
         <h3>California Privacy Rights Act (CPRA)</h3>
         <p>At Rooted Offsets, we prioritise your data privacy. We are fully compliant with the California Privacy Rights Act (CPRA), ensuring that your personal information is handled with care and transparency. We are committed to protecting your personal information and ensuring full compliance with the California Privacy Rights Act of 2020 (CPRA), which enhances the privacy rights of California consumers.</p>
@@ -136,7 +136,7 @@ export default function PrivacyPolicy() {
         </ul>
         <p>We also ensure that our sub-contractors are aware of our privacy policy and receive regular updates on our security practices. We recommend that you use a strong and unique password, keep it confidential, and log out of your account on shared computers to safeguard the security of your personal information. At our company, we take the security and privacy of your data seriously and work hard to keep it safe.</p>
 
-        <h3>Protecting Your Child's Privacy</h3>
+        <h3>Protecting Your Child"s Privacy</h3>
         <p>We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your children have provided us with personal data, please contact us. If we become aware that we have collected personal data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
 
         <h3>Changes to This Privacy Policy</h3>

@@ -1,24 +1,24 @@
-import { useState, useRef, useEffect } from 'react'
-import '../App.css'
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import { useState, useRef, useEffect } from "react"
+import "../App.css"
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true)
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState({})
-  const [successMessage, setSuccessMessage] = useState('')
+  const [successMessage, setSuccessMessage] = useState("")
   
   const [loginData, setLoginData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: ""
   })
   
   const [signupData, setSignupData] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
   })
 
   const googleButtonRef = useRef(null)
@@ -26,29 +26,29 @@ export default function Auth() {
 
   useEffect(() => {
     const handleGoogleSignIn = (response) => {
-      console.log('Google Sign-In:', response)
-      setSuccessMessage('Successfully signed in with Google!')
+      console.log("Google Sign-In:", response)
+      setSuccessMessage("Successfully signed in with Google!")
       setErrors({})
     }
 
     const initializeGoogleSignIn = () => {
       if (googleButtonRef.current && window.google) {
         window.google.accounts.id.initialize({
-          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '',
+          client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || "",
           callback: handleGoogleSignIn
         })
         window.google.accounts.id.renderButton(googleButtonRef.current, {
-          theme: 'outline',
-          size: 'large',
-          width: '100%'
+          theme: "outline",
+          size: "large",
+          width: "100%"
         })
       }
 
       if (googleButtonSignupRef.current && window.google) {
         window.google.accounts.id.renderButton(googleButtonSignupRef.current, {
-          theme: 'outline',
-          size: 'large',
-          width: '100%'
+          theme: "outline",
+          size: "large",
+          width: "100%"
         })
       }
     }
@@ -57,8 +57,8 @@ export default function Auth() {
     if (window.google) {
       initializeGoogleSignIn()
     } else {
-      const script = document.createElement('script')
-      script.src = 'https://accounts.google.com/gsi/client'
+      const script = document.createElement("script")
+      script.src = "https://accounts.google.com/gsi/client"
       script.async = true
       script.defer = true
       script.onload = initializeGoogleSignIn
@@ -69,31 +69,31 @@ export default function Auth() {
   const handleMetaSignIn = async () => {
     try {
       if (!window.FB) {
-        console.error('Facebook SDK not loaded')
+        console.error("Facebook SDK not loaded")
         return
       }
       
       window.FB.login((response) => {
         if (response.authResponse) {
-          console.log('Facebook Sign-In:', response)
-          setSuccessMessage('Successfully signed in with Facebook!')
+          console.log("Facebook Sign-In:", response)
+          setSuccessMessage("Successfully signed in with Facebook!")
           setErrors({})
         }
-      }, { scope: 'public_profile,email' })
+      }, { scope: "public_profile,email" })
     } catch (error) {
-      console.error('Facebook login error:', error)
-      setErrors({ facebook: 'Facebook login failed' })
+      console.error("Facebook login error:", error)
+      setErrors({ facebook: "Facebook login failed" })
     }
   }
 
   const validateLoginForm = () => {
     const newErrors = {}
     
-    if (!loginData.email) newErrors.email = 'Email is required'
-    else if (!/\S+@\S+\.\S+/.test(loginData.email)) newErrors.email = 'Email is invalid'
+    if (!loginData.email) newErrors.email = "Email is required"
+    else if (!/\S+@\S+\.\S+/.test(loginData.email)) newErrors.email = "Email is invalid"
     
-    if (!loginData.password) newErrors.password = 'Password is required'
-    else if (loginData.password.length < 6) newErrors.password = 'Password must be at least 6 characters'
+    if (!loginData.password) newErrors.password = "Password is required"
+    else if (loginData.password.length < 6) newErrors.password = "Password must be at least 6 characters"
     
     return newErrors
   }
@@ -101,17 +101,17 @@ export default function Auth() {
   const validateSignupForm = () => {
     const newErrors = {}
     
-    if (!signupData.fullName) newErrors.fullName = 'Full name is required'
+    if (!signupData.fullName) newErrors.fullName = "Full name is required"
     
-    if (!signupData.email) newErrors.email = 'Email is required'
-    else if (!/\S+@\S+\.\S+/.test(signupData.email)) newErrors.email = 'Email is invalid'
+    if (!signupData.email) newErrors.email = "Email is required"
+    else if (!/\S+@\S+\.\S+/.test(signupData.email)) newErrors.email = "Email is invalid"
     
-    if (!signupData.password) newErrors.password = 'Password is required'
-    else if (signupData.password.length < 6) newErrors.password = 'Password must be at least 6 characters'
+    if (!signupData.password) newErrors.password = "Password is required"
+    else if (signupData.password.length < 6) newErrors.password = "Password must be at least 6 characters"
     
-    if (!signupData.confirmPassword) newErrors.confirmPassword = 'Please confirm your password'
+    if (!signupData.confirmPassword) newErrors.confirmPassword = "Please confirm your password"
     else if (signupData.password !== signupData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match'
+      newErrors.confirmPassword = "Passwords do not match"
     }
     
     return newErrors
@@ -131,25 +131,25 @@ export default function Auth() {
     
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData)
       })
 
       if (!response.ok) {
-        throw new Error('Login failed')
+        throw new Error("Login failed")
       }
 
       const data = await response.json()
-      setSuccessMessage('Login successful!')
-      console.log('Login response:', data)
+      setSuccessMessage("Login successful!")
+      console.log("Login response:", data)
       
       // Redirect or store auth token
-      // localStorage.setItem('authToken', data.token)
+      // localStorage.setItem("authToken", data.token)
       
     } catch (error) {
-      setErrors({ form: error.message || 'Login failed. Please try again.' })
+      setErrors({ form: error.message || "Login failed. Please try again." })
     } finally {
       setLoading(false)
     }
@@ -169,9 +169,9 @@ export default function Auth() {
     
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           fullName: signupData.fullName,
           email: signupData.email,
@@ -180,19 +180,19 @@ export default function Auth() {
       })
 
       if (!response.ok) {
-        throw new Error('Signup failed')
+        throw new Error("Signup failed")
       }
 
       const data = await response.json()
-      setSuccessMessage('Account created successfully! You can now log in.')
-      console.log('Signup response:', data)
+      setSuccessMessage("Account created successfully! You can now log in.")
+      console.log("Signup response:", data)
       
       // Reset form
-      setSignupData({ fullName: '', email: '', password: '', confirmPassword: '' })
+      setSignupData({ fullName: "", email: "", password: "", confirmPassword: "" })
       setIsLogin(true)
       
     } catch (error) {
-      setErrors({ form: error.message || 'Signup failed. Please try again.' })
+      setErrors({ form: error.message || "Signup failed. Please try again." })
     } finally {
       setLoading(false)
     }
@@ -203,7 +203,7 @@ export default function Auth() {
     setLoginData(prev => ({ ...prev, [name]: value }))
     // Clear error for this field
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }))
+      setErrors(prev => ({ ...prev, [name]: "" }))
     }
   }
 
@@ -212,7 +212,7 @@ export default function Auth() {
     setSignupData(prev => ({ ...prev, [name]: value }))
     // Clear error for this field
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }))
+      setErrors(prev => ({ ...prev, [name]: "" }))
     }
   }
 
@@ -221,7 +221,7 @@ export default function Auth() {
       <Nav />
 
       <div className="auth-container">
-        <h2 id="formHeader">{isLogin ? 'Login' : 'Sign Up'}</h2>
+        <h2 id="formHeader">{isLogin ? "Login" : "Sign Up"}</h2>
 
         {successMessage && (
           <div className="success-message">{successMessage}</div>
@@ -233,7 +233,7 @@ export default function Auth() {
 
         {isLogin ? (
           <form onSubmit={handleLogin}>
-            <div ref={googleButtonRef} style={{ marginBottom: '1rem' }}></div>
+            <div ref={googleButtonRef} style={{ marginBottom: "1rem" }}></div>
 
             <button
               type="button"
@@ -279,19 +279,19 @@ export default function Auth() {
             </div>
 
             <button type="submit" className="btn" disabled={loading}>
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? "Logging in..." : "Login"}
             </button>
 
             <div className="toggle-form">
-              Don't have an account?{' '}
+              Don"t have an account?{" "}
               <button
                 type="button"
                 onClick={() => {
                   setIsLogin(false)
                   setErrors({})
-                  setSuccessMessage('')
+                  setSuccessMessage("")
                 }}
-                style={{ background: 'none', border: 'none', color: '#007bff', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ background: "none", border: "none", color: "#007bff", cursor: "pointer", textDecoration: "underline" }}
               >
                 Sign Up
               </button>
@@ -299,7 +299,7 @@ export default function Auth() {
           </form>
         ) : (
           <form onSubmit={handleSignup}>
-            <div ref={googleButtonSignupRef} style={{ marginBottom: '1rem' }}></div>
+            <div ref={googleButtonSignupRef} style={{ marginBottom: "1rem" }}></div>
 
             <button
               type="button"
@@ -374,19 +374,19 @@ export default function Auth() {
             </div>
 
             <button type="submit" className="btn" disabled={loading}>
-              {loading ? 'Creating Account...' : 'Create Account'}
+              {loading ? "Creating Account..." : "Create Account"}
             </button>
 
             <div className="toggle-form">
-              Already have an account?{' '}
+              Already have an account?{" "}
               <button
                 type="button"
                 onClick={() => {
                   setIsLogin(true)
                   setErrors({})
-                  setSuccessMessage('')
+                  setSuccessMessage("")
                 }}
-                style={{ background: 'none', border: 'none', color: '#007bff', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ background: "none", border: "none", color: "#007bff", cursor: "pointer", textDecoration: "underline" }}
               >
                 Login
               </button>

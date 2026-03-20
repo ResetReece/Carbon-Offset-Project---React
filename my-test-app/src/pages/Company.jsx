@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import { useState, useEffect } from "react";
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function Company() {
 

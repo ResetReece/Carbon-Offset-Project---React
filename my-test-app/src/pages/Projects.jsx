@@ -1,48 +1,48 @@
-import { useState } from 'react';
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
-import rainforest from '../assets/images/rainforrest.png';
-import windFarm from '../assets/images/wind-farm.png';
-import wetland from '../assets/images/wetland-restoration.png';
-import solarFarm from '../assets/images/solar-farm.png';
-import reforestation from '../assets/images/reforrestation-project.png';
+import { useState } from "react";
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
+import rainforest from "../assets/images/rainforrest.png";
+import windFarm from "../assets/images/wind-farm.png";
+import wetland from "../assets/images/wetland-restoration.png";
+import solarFarm from "../assets/images/solar-farm.png";
+import reforestation from "../assets/images/reforrestation-project.png";
 
 const projects = [
   {
     id: 0,
-    title: 'Rainforest Conservation',
+    title: "Rainforest Conservation",
     image: rainforest,
-    description: 'Protecting Amazon rainforests from deforestation through land acquisition and community partnerships. Each hectare preserved stores significant carbon and supports biodiversity.',
-    color: '#27ae60'
+    description: "Protecting Amazon rainforests from deforestation through land acquisition and community partnerships. Each hectare preserved stores significant carbon and supports biodiversity.",
+    color: "#27ae60"
   },
   {
     id: 1,
-    title: 'Wind Energy Initiative',
+    title: "Wind Energy Initiative",
     image: windFarm,
-    description: 'Funding large-scale wind farms across developing nations. Each megawatt of wind power replaces fossil fuels and prevents thousands of tons of CO2 emissions annually.',
-    color: '#3498db'
+    description: "Funding large-scale wind farms across developing nations. Each megawatt of wind power replaces fossil fuels and prevents thousands of tons of CO2 emissions annually.",
+    color: "#3498db"
   },
   {
     id: 2,
-    title: 'Wetland Restoration',
+    title: "Wetland Restoration",
     image: wetland,
-    description: 'Restoring coastal wetlands and marshes that naturally sequester carbon. Wetlands are among nature\'s most effective carbon sinks while providing critical habitat.',
-    color: '#16a085'
+    description: "Restoring coastal wetlands and marshes that naturally sequester carbon. Wetlands are among nature\"s most effective carbon sinks while providing critical habitat.",
+    color: "#16a085"
   },
   {
     id: 3,
-    title: 'Renewable Solar Farms',
+    title: "Renewable Solar Farms",
     image: solarFarm,
-    description: 'Building solar energy infrastructure in communities without reliable electricity. These farms reduce reliance on diesel generators and coal power while providing clean energy access.',
-    color: '#f39c12'
+    description: "Building solar energy infrastructure in communities without reliable electricity. These farms reduce reliance on diesel generators and coal power while providing clean energy access.",
+    color: "#f39c12"
   },
   {
     id: 4,
-    title: 'Reforestation Program',
+    title: "Reforestation Program",
     image: reforestation,
-    description: 'Planting millions of native trees in degraded lands across Africa and Southeast Asia. Trees capture atmospheric carbon while restoring ecosystems and providing livelihoods for local communities.',
-    color: '#52b788'
+    description: "Planting millions of native trees in degraded lands across Africa and Southeast Asia. Trees capture atmospheric carbon while restoring ecosystems and providing livelihoods for local communities.",
+    color: "#52b788"
   }
 ];
 
@@ -69,8 +69,8 @@ export default function Projects() {
         <h1 className="company-name">Our Projects</h1>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <h2 className="section-subtitle" style={{ textAlign: 'center', fontSize: '2em' }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <h2 className="section-subtitle" style={{ textAlign: "center", fontSize: "2em" }}>
           Discover Our Projects
         </h2>
       </div>
@@ -84,7 +84,7 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`project-card ${index === currentIndex ? 'active' : ''}`}
+                className={`project-card ${index === currentIndex ? "active" : ""}`}
                 style={{ backgroundColor: project.color }}
               >
                 <img src={project.image} alt={project.title} className="project-image" />
@@ -105,7 +105,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <span
               key={index}
-              className={`carousel-dot ${index === currentIndex ? 'active' : ''}`}
+              className={`carousel-dot ${index === currentIndex ? "active" : ""}`}
               data-index={index}
               onClick={() => handleDotClick(index)}
             ></span>

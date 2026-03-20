@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function Products() {
   const navigate = useNavigate();
@@ -35,21 +35,21 @@ export default function Products() {
           <button
             className="plan-button"
             id="button1"
-            onClick={() => handleCategorySelect('individuals')}
+            onClick={() => handleCategorySelect("individuals")}
           >
             Individuals
           </button>
           <button
             className="plan-button"
             id="button2"
-            onClick={() => handleCategorySelect('businesses')}
+            onClick={() => handleCategorySelect("businesses")}
           >
             Businesses
           </button>
           <button
             className="plan-button"
             id="button3"
-            onClick={() => handleCategorySelect('events')}
+            onClick={() => handleCategorySelect("events")}
           >
             Events
           </button>

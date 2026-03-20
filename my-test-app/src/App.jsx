@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import './App.css'
-import Home from './pages/Home'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import "./App.css"
+import Home from "./pages/Home"
 
 export default function App() {
   return (

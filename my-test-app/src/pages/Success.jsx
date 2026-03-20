@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function Success() {
   const navigate = useNavigate();
   const [showReviewModal, setShowReviewModal] = useState(true);
   const [showThankYouModal, setShowThankYouModal] = useState(false);
-  const [reviewName, setReviewName] = useState('');
+  const [reviewName, setReviewName] = useState("");
   const [reviewRating, setReviewRating] = useState(0);
-  const [reviewText, setReviewText] = useState('');
+  const [reviewText, setReviewText] = useState("");
   const [hoveredRating, setHoveredRating] = useState(0);
 
   const handleStarClick = (rating) => {
@@ -20,7 +20,7 @@ export default function Success() {
   const handleSubmitReview = (e) => {
     e.preventDefault();
     if (reviewRating === 0) {
-      alert('Please select a rating');
+      alert("Please select a rating");
       return;
     }
     console.log({
@@ -51,16 +51,16 @@ export default function Success() {
         <p>Your carbon offset certificate(s) have been automatically downloaded to your device.</p>
         <p>
           A confirmation email will be sent to you shortly. You can view your certificates anytime in your
-          <a href="#" onClick={() => navigate('/account')} style={{ color: '#27ae60', fontWeight: 600 }}>
-            {' '}Account
+          <a href="#" onClick={() => navigate("/account")} style={{ color: "#27ae60", fontWeight: 600 }}>
+            {" "}Account
           </a>
           .
         </p>
         <p>You can now continue reducing your carbon footprint with Rooted Offsets.</p>
         <button
           className="return-btn"
-          onClick={() => navigate('/products')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'none' }}
+          onClick={() => navigate("/products")}
+          style={{ background: "none", border: "none", cursor: "pointer", textDecoration: "none" }}
         >
           Continue Shopping
         </button>
@@ -68,11 +68,11 @@ export default function Success() {
 
       {showThankYouModal && (
         <div className="review-modal-overlay" id="thankYouModal">
-          <div className="review-modal" style={{ maxWidth: '400px' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '60px', marginBottom: '20px' }}>✓</div>
-              <h2 style={{ color: '#27ae60', marginBottom: '15px' }}>Thank You!</h2>
-              <p style={{ color: '#2c3e50', fontSize: '16px', marginBottom: '20px' }}>
+          <div className="review-modal" style={{ maxWidth: "400px" }}>
+            <div style={{ textAlign: "center" }}>
+              <div style={{ fontSize: "60px", marginBottom: "20px" }}>✓</div>
+              <h2 style={{ color: "#27ae60", marginBottom: "15px" }}>Thank You!</h2>
+              <p style={{ color: "#2c3e50", fontSize: "16px", marginBottom: "20px" }}>
                 Your review has been submitted successfully.
               </p>
               <button
@@ -111,7 +111,7 @@ export default function Success() {
                 <div
                   className="rating-input"
                   id="ratingContainer"
-                  style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}
+                  style={{ display: "flex", justifyContent: "center", gap: "10px" }}
                 >
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span
@@ -122,10 +122,10 @@ export default function Success() {
                       onMouseEnter={() => setHoveredRating(star)}
                       onMouseLeave={() => setHoveredRating(0)}
                       style={{
-                        fontSize: '32px',
-                        cursor: 'pointer',
-                        color: star <= (hoveredRating || reviewRating) ? '#f39c12' : '#ddd',
-                        transition: 'color 0.2s'
+                        fontSize: "32px",
+                        cursor: "pointer",
+                        color: star <= (hoveredRating || reviewRating) ? "#f39c12" : "#ddd",
+                        transition: "color 0.2s"
                       }}
                     >
                       ★

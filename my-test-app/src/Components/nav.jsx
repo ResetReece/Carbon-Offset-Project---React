@@ -1,27 +1,27 @@
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import '../App.css';
-import logoIcon from '../assets/images/logo-icon.png';
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "../App.css";
+import logoIcon from "../assets/images/logo-icon.png";
 
 export default function Nav() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return !!localStorage.getItem('authToken');
+    return !!localStorage.getItem("authToken");
   });
   const [cartCount, setCartCount] = useState(() => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     return cart.length;
   });
 
   useEffect(() => {
     const handleStorageChange = () => {
-      const token = localStorage.getItem('authToken');
+      const token = localStorage.getItem("authToken");
       setIsLoggedIn(!!token);
-      const newCart = JSON.parse(localStorage.getItem('cart')) || [];
+      const newCart = JSON.parse(localStorage.getItem("cart")) || [];
       setCartCount(newCart.length);
     };
 
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   return (
@@ -87,7 +87,7 @@ export default function Nav() {
             <Link to="/account" className="profile-icon-link">
               <img
                 id="profileIcon"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2327ae60' width='100' height='100'/%3E%3Ccircle cx='50' cy='35' r='20' fill='white'/%3E%3Cpath d='M 25 70 Q 25 55 50 55 Q 75 55 75 70 L 75 100 L 25 100 Z' fill='white'/%3E%3C/svg%3E"
+                src="data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Crect fill="%2327ae60" width="100" height="100"/%3E%3Ccircle cx="50" cy="35" r="20" fill="white"/%3E%3Cpath d="M 25 70 Q 25 55 50 55 Q 75 55 75 70 L 75 100 L 25 100 Z" fill="white"/%3E%3C/svg%3E"
                 width="55"
                 height="55"
                 alt="Profile"

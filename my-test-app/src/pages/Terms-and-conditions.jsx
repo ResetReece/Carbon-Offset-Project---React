@@ -1,6 +1,6 @@
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function TermsAndConditions() {
   return (
@@ -25,7 +25,7 @@ export default function TermsAndConditions() {
 
         <h3>Sales</h3>
         <p>
-          All prices quoted include applicable sales taxes and levies in accordance with the law of Company's
+          All prices quoted include applicable sales taxes and levies in accordance with the law of Company"s
           jurisdiction. Refunds will be approved if requested within 90 business days of all other purchases. To request
           a refund for your Rooted Offsets purchase, send us an email at customersupport@rootedoffsets.com. If you wish
           to enter into a transaction, you may be asked to supply certain relevant information, such as your credit card
@@ -38,8 +38,8 @@ export default function TermsAndConditions() {
           purchase to pay for operating expenses and as net profits. For example, only, in 2024 Rooted Offsets incurred
           around 30% of sales as business operating costs and retained less than 10% of sales as net profits across online
           and direct business sales. These figures may vary from year to year. Customer also acknowledges that as a result
-          of Rooted Offsets's business model of portfolio and volumetric pricing, the percentage of sales allocated to net
-          profit, and operating costs may differ for the customer's transaction. Operating and transactional costs include
+          of Rooted Offsets"s business model of portfolio and volumetric pricing, the percentage of sales allocated to net
+          profit, and operating costs may differ for the customer"s transaction. Operating and transactional costs include
           but are not limited to registry fees, credit retirement and transfer fees, annual purchase and retirement audits,
           payment processing fees, website hosting and maintenance fees, carbon calculator hosting and development, legal
           fees, employee salaries, and marketing costs.
@@ -56,7 +56,7 @@ export default function TermsAndConditions() {
           When you purchase a subscription, every month Company will bill you in the amount stated at the time of purchase
           using the payment method you specified. Subscriptions begin as soon as you have completed enrollment including
           payment confirmation. Subscriptions renew automatically each month unless you cancel the subscription. Company
-          may change its pricing, but you will be given at least 30 days' notice prior to the change. You may cancel
+          may change its pricing, but you will be given at least 30 days" notice prior to the change. You may cancel
           subscriptions at any time by contacting Company. Company reserves the right to cancel subscription services at
           any time.
         </p>
@@ -64,8 +64,8 @@ export default function TermsAndConditions() {
         <h3>Legal Construction / Force Majeure / Exports</h3>
         <p>
           Company will not be liable to you or be deemed to be in breach of these terms due to any delay in performing or
-          any failure to perform any of Company's obligations under these terms if the delay or failure was due to any cause
-          beyond Company's reasonable control (which include, but are not limited to: government actions, war, fire,
+          any failure to perform any of Company"s obligations under these terms if the delay or failure was due to any cause
+          beyond Company"s reasonable control (which include, but are not limited to: government actions, war, fire,
           explosion, flood, acts of terrorism, import or export regulations or embargoes, labour disputes or inability to
           obtain or a delay in obtaining supplies of Goods or labour). Company may at its option delay the performance of
           or cancel the whole or any part of a purchase. Company reserves the right to modify these terms at any time upon

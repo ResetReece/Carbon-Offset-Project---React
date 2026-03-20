@@ -1,6 +1,6 @@
-import '../App.css';
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import "../App.css";
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
 
 export default function Home() {
   return (
@@ -19,11 +19,11 @@ export default function Home() {
       </div>
 
       <div className="right-content-box">
-        <p>A recent report by JP Morgan stated that Climate Change is so severe now that the human race may not be able to survive on planet earth or at least be living in a very different world in less than a lifetime from now. Time is running out to limit the impending climate catastrophe if it hasn't run out already.</p>
+        <p>A recent report by JP Morgan stated that Climate Change is so severe now that the human race may not be able to survive on planet earth or at least be living in a very different world in less than a lifetime from now. Time is running out to limit the impending climate catastrophe if it hasn"t run out already.</p>
       </div>
 
       <div className="left-content-box">
-        <p>We believe that there is no more time, as a human race we must vastly increase our efforts to reverse climate change or there won't be a habitable planet anymore.</p>
+        <p>We believe that there is no more time, as a human race we must vastly increase our efforts to reverse climate change or there won"t be a habitable planet anymore.</p>
       </div>
 
       <div className="right-content-box">

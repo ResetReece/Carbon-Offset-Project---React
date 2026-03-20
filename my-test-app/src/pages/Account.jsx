@@ -1,12 +1,13 @@
-import { useState, useRef } from 'react'
-import '../App.css'
-import Nav from '../Components/nav';
-import Footer from '../Components/footer';
+import { useState, useRef } from "react"
+import "../App.css"
+import Nav from "../Components/nav";
+import Footer from "../Components/footer";
+import Crop from "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
 
 export default function Account() {
-  const [errorMessage] = useState('')
+  const [errorMessage] = useState("")
   const [showCropModal, setShowCropModal] = useState(false)
-  const [profileImage, setProfileImage] = useState('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23e0e0e0%27 width=%27100%27 height=%27100%27/%3E%3Ccircle cx=%2750%27 cy=%2735%27 r=%2720%27 fill=%27%23999%27/%3E%3Cpath d=%27M 25 70 Q 25 55 50 55 Q 75 55 75 70 L 75 100 L 25 100 Z%27 fill=%27%23999%27/%3E%3C/svg%3E')
+  const [profileImage, setProfileImage] = useState("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23e0e0e0%27 width=%27100%27 height=%27100%27/%3E%3Ccircle cx=%2750%27 cy=%2735%27 r=%2720%27 fill=%27%23999%27/%3E%3Cpath d=%27M 25 70 Q 25 55 50 55 Q 75 55 75 70 L 75 100 L 25 100 Z%27 fill=%27%23999%27/%3E%3C/svg%3E")
   const [orders] = useState([])
   const fileInputRef = useRef(null)
   const cropImageRef = useRef(null)
@@ -28,7 +29,7 @@ export default function Account() {
   }
 
   const deleteProfileImage = () => {
-    setProfileImage('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23e0e0e0%27 width=%27100%27 height=%27100%27/%3E%3Ccircle cx=%2750%27 cy=%2735%27 r=%2720%27 fill=%27%23999%27/%3E%3Cpath d=%27M 25 70 Q 25 55 50 55 Q 75 55 75 70 L 75 100 L 25 100 Z%27 fill=%27%23999%27/%3E%3C/svg%3E')
+    setProfileImage("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23e0e0e0%27 width=%27100%27 height=%27100%27/%3E%3Ccircle cx=%2750%27 cy=%2735%27 r=%2720%27 fill=%27%23999%27/%3E%3Cpath d=%27M 25 70 Q 25 55 50 55 Q 75 55 75 70 L 75 100 L 25 100 Z%27 fill=%27%23999%27/%3E%3C/svg%3E")
   }
 
   const handleUploadClick = () => {
@@ -42,7 +43,7 @@ export default function Account() {
       reader.onload = (event) => {
         setShowCropModal(true)
         if (cropImageRef.current) {
-          cropImageRef.current.src = event.target?.result || ''
+          cropImageRef.current.src = event.target?.result || ""
         }
       }
       reader.readAsDataURL(file)
@@ -58,7 +59,7 @@ export default function Account() {
   }
 
   const logout = () => {
-    console.log('Logging out...')
+    console.log("Logging out...")
   }
 
   return (
@@ -74,24 +75,24 @@ export default function Account() {
             <ul className="account-tabs">
               <li>
                 <button
-                  className={`account-tab-link ${activeTab === 'personal' ? 'active' : ''}`}
-                  onClick={() => switchTab('personal')}
+                  className={`account-tab-link ${activeTab === "personal" ? "active" : ""}`}
+                  onClick={() => switchTab("personal")}
                 >
                   Personal Details
                 </button>
               </li>
               <li>
                 <button
-                  className={`account-tab-link ${activeTab === 'security' ? 'active' : ''}`}
-                  onClick={() => switchTab('security')}
+                  className={`account-tab-link ${activeTab === "security" ? "active" : ""}`}
+                  onClick={() => switchTab("security")}
                 >
                   Security
                 </button>
               </li>
               <li>
                 <button
-                  className={`account-tab-link ${activeTab === 'orders' ? 'active' : ''}`}
-                  onClick={() => switchTab('orders')}
+                  className={`account-tab-link ${activeTab === "orders" ? "active" : ""}`}
+                  onClick={() => switchTab("orders")}
                 >
                   Order History
                 </button>
@@ -100,7 +101,7 @@ export default function Account() {
           </div>
 
           <div className="account-content">
-            {activeTab === 'personal' && (
+            {activeTab === "personal" && (
               <div className="account-section">
                 <div className="profile-section">
                   <div className="profile-image-container" id="profileImageContainer">
@@ -118,20 +119,20 @@ export default function Account() {
                       id="profileImageInput"
                       accept="image/*"
                       onChange={handleFileChange}
-                      style={{ display: 'none' }}
+                      style={{ display: "none" }}
                     />
                     <button className="upload-btn" onClick={handleUploadClick}>
                       Upload Photo
                     </button>
-                    <div id="uploadStatus" style={{ marginTop: '10px', fontSize: '14px' }}></div>
+                    <div id="uploadStatus" style={{ marginTop: "10px", fontSize: "14px" }}></div>
                   </div>
                 </div>
 
                 <div className="user-info">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                    <h3 style={{ margin: 0, color: '#2c3e50' }}>Account Information</h3>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+                    <h3 style={{ margin: 0, color: "#2c3e50" }}>Account Information</h3>
                     <button className="edit-link" id="editToggle" onClick={toggleEditMode}>
-                      {isEditMode ? 'Cancel' : 'Edit'}
+                      {isEditMode ? "Cancel" : "Edit"}
                     </button>
                   </div>
                   <div className="info-item">
@@ -143,8 +144,8 @@ export default function Account() {
                         value={userName}
                         onChange={(e) => setUserName(e.target.value)}
                         onKeyPress={(e) => {
-                          if (e.key === 'Enter') saveChanges()
-                          if (e.key === 'Escape') cancelEdit()
+                          if (e.key === "Enter") saveChanges()
+                          if (e.key === "Escape") cancelEdit()
                         }}
                       />
                     ) : (
@@ -160,8 +161,8 @@ export default function Account() {
                         value={userEmail}
                         onChange={(e) => setUserEmail(e.target.value)}
                         onKeyPress={(e) => {
-                          if (e.key === 'Enter') saveChanges()
-                          if (e.key === 'Escape') cancelEdit()
+                          if (e.key === "Enter") saveChanges()
+                          if (e.key === "Escape") cancelEdit()
                         }}
                       />
                     ) : (
@@ -169,7 +170,7 @@ export default function Account() {
                     )}
                   </div>
                   {isEditMode && (
-                    <div id="editActions" style={{ display: 'flex', gap: '10px', marginTop: '15px', marginBottom: '15px' }}>
+                    <div id="editActions" style={{ display: "flex", gap: "10px", marginTop: "15px", marginBottom: "15px" }}>
                       <button className="edit-save-btn" onClick={saveChanges}>
                         Save Changes
                       </button>
@@ -186,20 +187,20 @@ export default function Account() {
               </div>
             )}
 
-            {activeTab === 'security' && (
+            {activeTab === "security" && (
               <div className="account-section">
                 <h3>Security</h3>
                 <div id="securityContent"></div>
               </div>
             )}
 
-            {activeTab === 'orders' && (
+            {activeTab === "orders" && (
               <div className="account-section">
                 <h3>Order History</h3>
-                <div id="ordersList" style={{ marginTop: '20px' }}>
+                <div id="ordersList" style={{ marginTop: "20px" }}>
                   {orders.length === 0 && (
-                    <p id="noOrderMessage" style={{ color: '#7f8c8d', fontStyle: 'italic' }}>
-                      You haven't placed any orders yet.
+                    <p id="noOrderMessage" style={{ color: "#7f8c8d", fontStyle: "italic" }}>
+                      You haven"t placed any orders yet.
                     </p>
                   )}
                 </div>
