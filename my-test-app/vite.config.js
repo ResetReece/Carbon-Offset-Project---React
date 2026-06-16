@@ -4,5 +4,10 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Carbon-Offset-Project---React/',
+  base: '/',
+  resolve: {
+    alias: {
+      '@assets': '/src/assets',
+    },
+  },
 })
